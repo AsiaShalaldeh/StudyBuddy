@@ -27,7 +27,7 @@ class StudentListApp extends StatelessWidget {
         name: 'John Doe',
         major: 'Computer Science',
         rating: 84.0,
-        imageUrl: 'assets/images/std3.jpg'),
+        imageUrl: 'assets/images/std2.jpg'),
     Student(
         id: '2',
         name: 'Jane Smith',
@@ -39,7 +39,19 @@ class StudentListApp extends StatelessWidget {
         name: 'Alice Johnson',
         major: 'Physics',
         rating: 90.0,
-        imageUrl: 'assets/images/std2.jpg'),
+        imageUrl: 'assets/images/std3.jpg'),
+    Student(
+        id: '4',
+        name: 'Tom Cruise',
+        major: 'Math',
+        rating: 60.0,
+        imageUrl: 'assets/images/std4.jpg'),
+    Student(
+        id: '5',
+        name: 'Will Smith',
+        major: 'Medicine',
+        rating: 80.0,
+        imageUrl: 'assets/images/std5.jpg'),
   ];
 
   @override
@@ -71,7 +83,9 @@ class StudentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(10),
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         padding: const EdgeInsets.all(8),
         child: Row(
@@ -126,7 +140,7 @@ class RatingStars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double ratingOutOf5 =
-        (rating / 20.0).clamp(0, 5); // Convert 0-100 scale to 0-5
+        (rating / 20.0).clamp(0, 5); // convert 0-100 scale to 0-5
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(
